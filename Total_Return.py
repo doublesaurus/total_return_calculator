@@ -20,15 +20,15 @@ def total_return(ticker):
 
     current_price = stock_data.info.get('currentPrice', 'price stock_data not found')
     
-    shares_need_sold = 0
+    shares_to_sell = 0
 
-    print(f"The current price of {user_ticker} is {current_price}")
+    print(f"The current price of {user_ticker} is ${current_price}")
 
     if float(current_price) <= avg_cost:
         print("At current market prices you cannot recoup your total investment.")
     else:
-        shares_need_sold = round(initial_investment/current_price, 2)
-        print(f"At current market prices if you sold {shares_need_sold} shares of {user_ticker} you would reclaim your initial cost.")
+        shares_to_sell = round(initial_investment/current_price, 2)
+        print(f"At current market prices if you sold {shares_to_sell} shares of {user_ticker} you would reclaim your initial cost.")
 
 total_return(input("Enter the ticker of the stock: ").upper())
 
